@@ -29,12 +29,15 @@ class Board extends React.Component{
     super(props);
     //Generaye a random list
     let letters_lst = this.initiateLst();
+    let empty_lst = [];
+    for (let i = 0; i < letters_lst.length;i++){
+      empty_lst.push(null);
+    }
     //setup initial state
     this.state = {
 	    first:  null,
 	    letters: letters_lst,
-	    present: [null, null, null, null, null, null, null, null, null, null, 
-		    null, null, null, null, null, null], 
+	    present: empty_lst, 
 	    clicks: 0, 
 	    click_disabled: false
 
@@ -43,11 +46,15 @@ class Board extends React.Component{
  
   //initiate letter list.
   initiateLst(){
-    let letter_lst = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
-	    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    let letter_lst = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    let letter_lst2 = [];
+    for (let i = 0 ; i < letter_lst.length;i ++){
+      letter_lst2.push(letter_lst[i]);
+      letter_lst2.push(letter_lst[i]);
+    }
     let new_lst = [];
-	while(letter_lst.length> 0){
-          let letter = _.sample(letter_lst);
+	while(letter_lst2.length> 0){
+         let letter = _.sample(letter_lst);
           new_lst.push(letter);
 	  letter_lst.splice(letter_lst.indexOf(letter), 1);
 	}
@@ -108,7 +115,7 @@ class Board extends React.Component{
   render(){
     let clicks_num = this.state.clicks;
 	return (
-	<div class="main">
+	<div className="main">
 	  <p>clicks: {clicks_num}</p>
 	  <div className="board-row">
             {this.renderSquare(0)}
@@ -146,4 +153,3 @@ class Board extends React.Component{
 
 
 }
-
