@@ -1,0 +1,53 @@
+/* This file is for your main application css. */
+
+@import "~milligram/dist/milligram";
+
+body {
+  font: 34px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+.main{
+  width:400px;
+  
+}
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+  
+}
+
+
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  color:black;
+  float:left;
+  font-size: 50px;
+  font-color:black;
+  font-weight: bold;
+  line-height: 34px;
+  margin:0 auto;
+  padding: 0;
+  text-align: center;
+  height: 56px;
+  width: 56px;
+}
+.square:hover{
+  background-color:#D3D3D3;
+  color:black;
+}
+.square:focus{
+  background-color:#D3D3D3;
+  color:black;
+}
+.square:active{
+  background-color:#D3D3D3;
+  color:black;
+
+}
+.restart{
+  width:224px;
+}
