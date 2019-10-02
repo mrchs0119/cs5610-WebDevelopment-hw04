@@ -58,7 +58,7 @@ class Board extends React.Component{
 	while(letter_lst2.length> 0){
          let letter = _.sample(letter_lst);
           new_lst.push(letter);
-	  letter_lst.splice(letter_lst.indexOf(letter), 1);
+	  letter_lst2.splice(letter_lst2.indexOf(letter), 1);
 	}
 	return new_lst;
   }
