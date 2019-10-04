@@ -56,7 +56,7 @@ class Board extends React.Component{
     }
     let new_lst = [];
 	while(letter_lst2.length> 0){
-         let letter = _.sample(letter_lst);
+         let letter = _.sample(letter_lst2);
           new_lst.push(letter);
 	  letter_lst2.splice(letter_lst2.indexOf(letter), 1);
 	}
@@ -67,7 +67,7 @@ class Board extends React.Component{
   restart(){
 	  let new_lst = this.initiateLst();
 	  let new_present = this.state.present.map(()=>{return null;});
-	  this.setState({first: null, clicks: 0, clickDisabled: false, 
+	  this.setState({first: null, clicks: 0, click_disabled: false, 
 		        letters: new_lst, present:new_present});
 
   return ;
